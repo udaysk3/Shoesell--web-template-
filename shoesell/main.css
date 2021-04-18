@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;900&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2, h3,
+p {
+  margin: 0;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 65em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .logo {
+  color: #020202;
+  text-shadow: 0px 0px 8px #fff;
+}
+
+.imgs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.imgs > * {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 15em;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0.5em auto;
+  padding: 0.6em 0.4em;
+  border-radius: 0.5em;
+  background-color: rgba(247, 243, 186, 0.979);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-size: 1.1em;
+  background-color: var(--clr-accent, blue);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  opacity: 350ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  opacity: 0.79;
+}
+
+.main-text {
+  font-size: 4rem;
+  font-size: clamp(4rem, calc( 5vw + 1rem), 4.5rem);
+  line-height: 1.01;
+  text-transform: uppercase;
+}
+
+.hero {
+  text-align: center;
+  color: #fff;
+  padding: 15em 0;
+  background-color: #222;
+  --clr-accent: #faa700;
+}
+
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background: url("https://raw.githubusercontent.com/kevin-powell/shoes/master/img/shoe-3.png"), radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
+.hero h1 {
+  color: #fff;
+  text-shadow: 2px 2px 4px #020202;
+  font-size: 4rem;
+  font-size: clamp(2rem, calc( 5vw + 1rem), 4.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.19em;
+  padding: 0;
+}
+
+.hero .btn {
+  margin-top: 2em;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 3.5em;
+  font-size: clamp(2.8rem, calc(5vw + 1rem), 4.5rem);
+}
+
+section {
+  padding: 7em 0;
+}
+
+.featured {
+  background-color: #eee;
+}
+
+.featured__items {
+  display: block;
+  position: relative;
+  -webkit-transform: scale(0.83);
+          transform: scale(0.83);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.featured__items span {
+  display: block;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.featured__items:hover, .featured__items:focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.featured__items:hover .featured__details, .featured__items:focus .featured__details {
+  opacity: 1;
+  -webkit-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+  text-shadow: 1.6px 1px 1px #4e4e4e;
+}
+
+.featured__items::after {
+  content: "";
+  position: absolute;
+  padding: 75% 75% 0 0;
+  top: 0;
+  right: 25%;
+  z-index: -2;
+  border-radius: 50%;
+  background-color: #2193b0;
+}
+
+.featured__details {
+  opacity: 0;
+}
+
+.products h2 {
+  font-size: 4rem;
+  text-align: center;
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 3.5em;
+  font-size: clamp(2.8rem, calc(5vw + 1rem), 4.5rem);
+}
+
+.products .product {
+  background: radial-gradient(var(--clr-inner, #fffb02), var(--clr-outer, orange));
+  padding: 3em;
+  border-radius: 3em;
+  margin: 3em;
+  text-align: center;
+}
+
+.products .product__image {
+  margin: -5em 0 0 0;
+}
+
+@media (min-width: 45em) {
+  .products .product {
+    text-align: left;
+    margin-bottom: 6em;
+  }
+  .products .product__title {
+    margin: 0;
+  }
+  .products .product__image {
+    float: right;
+    width: 65%;
+    shape-margin: 1em;
+    margin: 0 -5em 0 0;
+  }
+}
+
+.products .product__title {
+  font-size: 4rem;
+  font-size: clamp(3em, calc( 5vw + 1em), 4em);
+  color: #fff;
+  text-shadow: 0 0 0.2em black;
+  line-height: 1.08;
+}
+
+.products .shoe-1 {
+  --clr-inner: #faa700;
+  --clr-outer: #ffa109 ;
+  --clr-accent: #a1173c;
+}
+
+.products .shoe-2 {
+  --clr-inner: #fce4b3 ;
+  --clr-outer:  #eac886;
+  --clr-accent: #2f4858 ;
+}
+
+.products .shoe-3 {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951 ;
+}
+
+.products .btn {
+  margin-top: 1em;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer h3 {
+  font-size: 1.3em;
+}
+
+.footer h4 {
+  color: #03206d;
+  margin-bottom: 1em;
+}
+/*# sourceMappingURL=main.css.map */
